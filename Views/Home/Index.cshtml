@@ -1,0 +1,28 @@
+﻿@model ProjectTest.Models.LoginModel
+
+<div class="container" style="margin-top:30px">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                {
+                    <div class="form-group">
+                        <label for="email-label">Username:</label>
+                        @Html.ValidationMessageFor(model => model.UserName)
+                        @Html.EditorFor(model => model.UserName, new { @class = "form-control", id = "email-input" })
+
+                     </div>
+                    <div class="form-group">
+                        <label for="password-label">Password:</label>
+                        @Html.ValidationMessageFor(model => model.Password)
+                        @Html.EditorFor(model => model.Password, new { @class = "form-control", id = "password-input" })
+                    </div>
+                    <button type="submit" class="btn btn-sm btn-default" id="sub-button">Submit</button>
+                }
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        // Tag for unblocking render of js
+    </script>
+</div>
